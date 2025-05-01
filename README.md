@@ -20,22 +20,22 @@ Taski-Docker — учебное приложение для управления
 - **Веб-сервер**: Nginx, Gunicorn  
 
 ## Быстрый старт
-# 1. Клонировать репозиторий:  
-   ```bash
-   git clone https://github.com/your-username/taski-docker.git
-   cd taski-docker
+```bash
+# 1. Клонировать репозиторий
+git clone https://github.com/your-username/taski-docker.git
+cd taski-docker
 
-# 2. Скопировать шаблон окружения и настроить переменные:
+# 2. Скопировать шаблон окружения и настроить переменные
 cp .env.example .env
 # отредактировать .env (DB_HOST, DB_NAME, DB_USER, DB_PASSWORD, SECRET_KEY и т.п.)
 
-# 3. Собрать и запустить контейнеры:
+# 3. Собрать и запустить контейнеры
 docker-compose up --build
 
-# 4. Выполнить миграции и создать суперпользователя:
+# 4. Выполнить миграции и создать суперпользователя
 docker-compose exec backend python manage.py migrate
 docker-compose exec backend python manage.py createsuperuser
 
 # 5. Открыть в браузере:
-# Фронтенд: http://localhost:3000
-# API:       http://localhost:8000/api/
+#    Фронтенд: http://localhost:3000
+#    API:       http://localhost:8000/api/
